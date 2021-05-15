@@ -1,38 +1,237 @@
-.App {
-  text-align: center;
+* {
+    text-decoration: none;
+}
+a:visited {
+    color: #0064EB;
+}
+html {
+    height: 100vh;
+}
+body {
+background-color: #E5E5E5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*CSS style for Header =================================*/
+
+.navigation-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #0064EB;
+    height: 70px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+    margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo i {
+    font-size: 40px;
+    color: #ffffff;
+}
+i.fa {
+    width: 24px;
+    height: 24px;
+    margin-right: -46px;
+    position: relative;
+    z-index: 1;
+    color: #808080;
+}
+.item {
+    margin-left: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-input {
+    background: #ffffff;
+    height: 32px;
+    width: 500px;
+    padding: 8px 45px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    line-height: 17px;
+    color: #808080;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*CSS common style for InitialPage and UserNotFoundPage =================================*/
+
+.icon-wrapper {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 110px;
+    color: #808080;
+}
+
+.icon-item-1 {
+    height: 110px;
+    width: 110px;
+}
+
+.icon-item-2 {
+    height: 60px;
+    width: 210px;
+}
+
+.icon-text {
+    text-align: center;
+    font-size: 22px;
+    line-height: 140%;
+    color: #808080;
+}
+
+/*CSS style for Profile =================================*/
+
+.profileWrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px 55px 30px 55px;
+    height: 70vh;
+}
+.profileDescriptionWrapper {
+    height: 70vh;
+    padding-right: 96px;
+}
+.profileAvatar {
+    height: 280px;
+    width: 280px;
+    border-radius: 100%;
+}
+
+.informationWrapper {
+    margin-top: 30px;
+    height: 125px;
+    width: 300px;
+}
+
+.profileName {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    height: 34px;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+    color: #000000;
+}
+.profileLogin {
+    color: #0064EB;
+}
+
+.followerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.iconProfile {
+    font-size: 24px;
+    color: #808080;
+}
+
+/*CSS style for Repository =================================*/
+
+.repoItemsWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 24px 32px 0 0;
+    width: 877px;
+    height: 112px;
+    background: #FFFFFF;
+    border-radius: 6px;
+}
+
+.numberOfRepositories {
+    color: #000000;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+}
+
+.repoName {
+    color: #0064EB;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.repoName a {
+    color: #0064EB;
+}
+
+.repoDescription {
+    color: #000000;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.repoItemsContent {
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin: 24px auto 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.empty-repos-wrapper {
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+}
+
+
+/*CSS style for Paginator    =================================*/
+
+.selectedPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: white solid 1px;
+    background-color: #0064EB;
+    border-radius: 3px;
+    width: 21px;
+    height: 25px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.paginatorWrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.paginatorWrapperItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 70px 28px;
+    width: 335px;
+    height: 25px;
+}
+.paginatorIcons {
+    color: #0064EB;
+    font-size: 14px;
+    cursor: pointer;
+}
+.paginatorWrapper span {
+    color: #808080;
+    cursor: pointer;
+}
+.paginatorCommonInf {
+    font-size: 14px;
+    color: #808080;
 }
