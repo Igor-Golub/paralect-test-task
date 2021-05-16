@@ -14,6 +14,9 @@ export const Profile = () => {
     const isErrorName = useSelector((state: AppStateType) => state.user.isErrorName)
     const repositories = useSelector((state: AppStateType) => state.user.repositories)
 
+
+    console.log(user)
+
     if (user === null) {
         return <InitialPage/>
     }

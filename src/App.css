@@ -1,18 +1,20 @@
 * {
     text-decoration: none;
 }
+
 a:visited {
     color: #0064EB;
 }
+
 html {
     height: 100vh;
 }
+
 body {
 background-color: #E5E5E5;
 }
 
 /*CSS style for Header =================================*/
-
 .navigation-wrapper {
     display: flex;
     flex-direction: row;
@@ -30,6 +32,7 @@ background-color: #E5E5E5;
     font-size: 40px;
     color: #ffffff;
 }
+
 i.fa {
     width: 24px;
     height: 24px;
@@ -38,6 +41,7 @@ i.fa {
     z-index: 1;
     color: #808080;
 }
+
 .item {
     margin-left: 40px;
 }
@@ -56,7 +60,6 @@ i.fa {
 }
 
 /*CSS common style for InitialPage and UserNotFoundPage =================================*/
-
 .icon-wrapper {
     height: 80vh;
     display: flex;
@@ -95,10 +98,12 @@ i.fa {
     margin: 30px 55px 30px 55px;
     height: 70vh;
 }
+
 .profileDescriptionWrapper {
     height: 70vh;
     padding-right: 96px;
 }
+
 .profileAvatar {
     height: 280px;
     width: 280px;
@@ -120,6 +125,7 @@ i.fa {
     line-height: 130%;
     color: #000000;
 }
+
 .profileLogin {
     color: #0064EB;
 }
@@ -137,7 +143,6 @@ i.fa {
 }
 
 /*CSS style for Repository =================================*/
-
 .repoItemsWrapper {
     position: relative;
     display: flex;
@@ -186,6 +191,7 @@ i.fa {
     flex-direction: column;
     justify-content: space-around;
 }
+
 .empty-repos-wrapper {
     position: absolute;
     left:0;
@@ -194,10 +200,10 @@ i.fa {
     bottom:0;
 }
 
-
 /*CSS style for Paginator    =================================*/
 
 .selectedPage {
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,15 +212,17 @@ i.fa {
     border-radius: 3px;
     width: 21px;
     height: 25px;
-    color: #FFFFFF;
-    font-weight: bold;
 }
+
 .paginatorWrapper {
     display: flex;
     justify-content: flex-end;
     width: 100%;
 }
+
 .paginatorWrapperItems {
+    font-size: 14px;
+    color: #808080;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -222,16 +230,13 @@ i.fa {
     width: 335px;
     height: 25px;
 }
+
 .paginatorIcons {
     color: #0064EB;
     font-size: 14px;
     cursor: pointer;
 }
-.paginatorWrapper span {
-    color: #808080;
+
+.paginatorNumberOfPage {
     cursor: pointer;
-}
-.paginatorCommonInf {
-    font-size: 14px;
-    color: #808080;
 }

@@ -1,6 +1,9 @@
 import React from "react";
 
 export const InitialPage:React.FC = () => {
+
+
+
     return <div className={'icon-wrapper icon-search-wrapper'}>
         <div className={'icon-item-1 icon-search-item-1'}>
             <i className="fas fa-search icon"/>

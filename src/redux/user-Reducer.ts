@@ -10,7 +10,6 @@ const SET_CURRENT_PAGE: string = 'Startup-Summer/user/SET_CURRENT_PAGE'
 const SET_TOTAL_REPOSITORIES_COUNT: string = 'Startup-Summer/user/SET_TOTAL_REPOSITORIES_COUNT'
 const SET_ERROR_USER_NAME: string = 'Startup-Summer/user/SET_ERROR_USER_NAME'
 const SET_ERROR_USER_NAME_MESSAGE: string = 'Startup-Summer/user/SET_ERROR_USER_NAME_MESSAGE'
-const PPPPPPPPPPPPPPPPPPP: string = 'Startup-Summer/user/PPPPPPPPPPPPPPPPPPP'
 
 type InitialStateType = typeof initialState
 const initialState = {
@@ -87,14 +86,16 @@ export const setErrorNameMessage = (errorNameMessage: string): SetErrorNameMessa
 })
 
 type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>
-export const getUser = (searchRequest: string): ThunkType => {
+export const getUser = (searchRequest: string, history: any): ThunkType => {
     return async (dispatch) => {
         try {
+
             dispatch(toggleIsFetching(true))
             const userData = await userAPI.getUserApi(searchRequest)
             dispatch(toggleIsFetching(false))
             dispatch(setUser(userData))
             dispatch(setTotalRepositoriesCount(userData.public_repos))
+            history.push("/profile")
         } catch (error) {
             dispatch(setErrorNameMessage(error.response.data.message))
             dispatch(setErrorName(error.isAxiosError))

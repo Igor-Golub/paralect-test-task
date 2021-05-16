@@ -30,13 +30,13 @@ export const Paginator: React.FC<PropsType> = ({
         <div className={'paginatorWrapper'}>
 
             <div className={'paginatorWrapperItems'}>
-                <div className={'paginatorCommonInf'}> {`${leftPortionPageNumber} - ${rightPortionPageNumber} of ${totalItemsCount} items`}</div>
+                <div> {`${leftPortionPageNumber} - ${rightPortionPageNumber} of ${totalItemsCount} items`}</div>
                 {portionNumber > 1 && <i className={'fas fa-chevron-left paginatorIcons'}
                                          onClick={() => setPortionNumber(portionNumber - 1)}/>}
                 {pages
                     .filter(page => page >= leftPortionPageNumber && page <= rightPortionPageNumber)
                     .map(page => {
-                        return <span className={ cn({'selectedPage': currentPage === page})}
+                        return <span className={ cn('paginatorNumberOfPage', {'selectedPage': currentPage === page})}
                                      key={page}
                                      onClick={() => onPageChanged(page)}>{page}</span>
                     })}

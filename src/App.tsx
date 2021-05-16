@@ -15,7 +15,7 @@ export const App:React.FC = () => {
             <Route path={'/initialPage'} render={() => <InitialPage />}/>
             <Route path={'/profile'} render={() => <Profile />}/>
             <Route path={'/emptyPageOfRepo'} render={() => <EmptyPageOfRepo />}/>
-            <Route path={'/u    serNotFoundPage'} render={() => <UserNotFoundPage />}/>
+            <Route path={'/userNotFoundPage'} render={() => <UserNotFoundPage />}/>
         </BrowserRouter>
     )
 }
