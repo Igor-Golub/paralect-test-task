@@ -1,22 +1,18 @@
-import React from "react";
-import {ProfileAvatar} from "./ProfileAvatar/ProfileAvatar";
-import {ProfileInformation} from "./ProfileInformation/ProfileInformation";
+import React from 'react';
+import {ProfileAvatar} from './ProfileAvatar/ProfileAvatar';
+import {ProfileInformation} from './ProfileInformation/ProfileInformation';
+import {userType} from '../../../../types/types';
 
 type PropsType = {
-    avatar_url: string
-    name: string
-    login: string
-    following: number
-    followers: number
-    html_url: string
+    user: userType
 }
 
-export const ProfileDescription:React.FC<PropsType> = ({avatar_url, name, login, following, followers, html_url}) => {
+export const ProfileDescription:React.FC<PropsType> = ({user}) => {
 
-    return <div className={'profileDescriptionWrapper'}>
-        <ProfileAvatar avatar_url={avatar_url}/>
-        <ProfileInformation name={name} login={login} html_url={html_url}
-                            followers={followers} following={following}
+    return <div className={'userDescriptionWrapper'}>
+        <ProfileAvatar avatar_url={user.avatar_url}/>
+        <ProfileInformation name={user.name} login={user.login} html_url={user.html_url}
+                            followers={user.followers} following={user.following}
         />
     </div>
 }

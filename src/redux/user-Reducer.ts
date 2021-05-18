@@ -50,12 +50,14 @@ type ActionsTypes = SetUserActionType | SetUserRepoActionType
                     | SetErrorNameMessageActionType
 
 type SetUserActionType = { type: typeof SET_USER, user: userType }
+
 export const setUser = (user: userType): SetUserActionType => ({
     type: SET_USER,
     user
 })
 
 type SetUserRepoActionType = { type: typeof SET_USER_REPOSITORIES, repositories: Array<any> }
+
 export const setUserRepo = (repositories: Array<any>): SetUserRepoActionType => ({
     type: SET_USER_REPOSITORIES,
     repositories
@@ -89,7 +91,6 @@ type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>
 export const getUser = (searchRequest: string, history: any): ThunkType => {
     return async (dispatch) => {
         try {
-
             dispatch(toggleIsFetching(true))
             const userData = await userAPI.getUserApi(searchRequest)
             dispatch(toggleIsFetching(false))

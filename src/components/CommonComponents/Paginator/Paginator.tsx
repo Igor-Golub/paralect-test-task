@@ -1,20 +1,20 @@
-import React, {useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import cn from 'classnames'
+import {getUserRepo, setCurrentPage} from '../../../redux/user-Reducer';
+import {useDispatch} from 'react-redux';
 
 type PropsType = {
     totalItemsCount: number,
     pageSize: number,
     currentPage: number,
-    onPageChanged: (page: number) => void,
     portionSize?: number
+    login: string
 }
 
-export const Paginator: React.FC<PropsType> = ({
-                                                   totalItemsCount, pageSize,
-                                                   currentPage, onPageChanged,
-                                                   portionSize = 4
-                                               }) => {
-
+export const Paginator: React.FC<PropsType> = ({ totalItemsCount, pageSize,
+                                                   currentPage, portionSize = 4,
+                                                   login}) => {
+    const dispatch = useDispatch()
     const pagesCount = Math.ceil(totalItemsCount / pageSize)
     const pages: Array<number> = []
     for (let i = 1; i <= pagesCount; i++) {
@@ -26,9 +26,17 @@ export const Paginator: React.FC<PropsType> = ({
     const leftPortionPageNumber = (portionNumber - 1) * portionSize + 1
     const rightPortionPageNumber = portionNumber * portionSize
 
-    return (
-        <div className={'paginatorWrapper'}>
+    const handlerPageChanged = useCallback((page) => {
+        dispatch(setCurrentPage(page));
+        dispatch(getUserRepo(login, page, pageSize))
+    }, []);
 
+    if(totalItemsCount <= 4) {
+        return null
+    }
+
+    return (
+        <div >
             <div className={'paginatorWrapperItems'}>
                 <div> {`${leftPortionPageNumber} - ${rightPortionPageNumber} of ${totalItemsCount} items`}</div>
                 {portionNumber > 1 && <i className={'fas fa-chevron-left paginatorIcons'}
@@ -38,7 +46,7 @@ export const Paginator: React.FC<PropsType> = ({
                     .map(page => {
                         return <span className={ cn('paginatorNumberOfPage', {'selectedPage': currentPage === page})}
                                      key={page}
-                                     onClick={() => onPageChanged(page)}>{page}</span>
+                                     onClick={() => handlerPageChanged(page)}>{page}</span>
                     })}
                 {portionCount > portionNumber && <i className={'fas fa-chevron-right paginatorIcons'}
                                                     onClick={() => setPortionNumber(portionNumber + 1)}/>}

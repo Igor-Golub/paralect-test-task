@@ -1,16 +1,9 @@
-/*
-Как работать с gitom закидывать код туда
-Пагинатор при нажатии обновляется всё преложение
-Верстка вообще все под вопросом
-Зависимость в useCallback
-По логике компонент отображению true/false
-*/
-
 import React, {useState} from 'react'
 import {getUser, getUserRepo, setErrorName, setErrorNameMessage} from '../../../redux/user-Reducer'
 import {useDispatch, useSelector} from 'react-redux'
 import {AppStateType} from "../../../redux/redux-store";
 import { useHistory } from 'react-router-dom';
+
 
 export const Header:React.FC = () => {
 
@@ -34,13 +27,13 @@ export const Header:React.FC = () => {
 
     return (
         <nav>
-            <div className={'navigation-wrapper'}>
+            <div className={'navigationWrapper'}>
                 <div className={'item'}>
-                    <a href={'https://github.com/'} target={'blank'} className={'logo'}><i className={'fab fa-github'}/></a>
+                    <a href={'https://github.com/'} target={'blank'} className={'logo'}><i className={'fab faGithub'}/></a>
                 </div>
                 <div className={'item'}>
-                    <i className="fa fas fa-search"/>
-                    <input className={'search-input'} name={'search'}
+                    <i className="fa fas faSearch"/>
+                    <input className={'searchInput'} name={'search'}
                            type={'text'} placeholder={'Enter GitHub username'}
                            value={searchRequest} onChange={changeHandler}
                            onKeyPress={onKeyPressHandler}
