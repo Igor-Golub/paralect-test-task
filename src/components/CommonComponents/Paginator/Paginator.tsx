@@ -11,7 +11,7 @@ type PropsType = {
     login: string
 }
 
-export const Paginator: React.FC<PropsType> = ({ totalItemsCount, pageSize,
+export const Paginator: React.FC<PropsType> = ({totalItemsCount, pageSize,
                                                    currentPage, portionSize = 4,
                                                    login}) => {
     const dispatch = useDispatch()
