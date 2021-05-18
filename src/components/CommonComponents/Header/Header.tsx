@@ -29,7 +29,7 @@ export const Header:React.FC = () => {
         <nav>
             <div className={'navigationWrapper'}>
                 <div className={'item'}>
-                    <a href={'https://github.com/'} target={'blank'} className={'logo'}><i className={'fab faGithub'}/></a>
+                    <a href={'https://github.com/'} target={'blank'} className={'logo'}><i className={'fab fa-github'}/></a>
                 </div>
                 <div className={'item'}>
                     <i className="fa fas faSearch"/>
