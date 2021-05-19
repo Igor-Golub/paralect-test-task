@@ -1,7 +1,7 @@
-import React, {useCallback, useState} from 'react'
+import React, { useCallback, useState } from 'react'
 import cn from 'classnames'
-import {getUserRepo, setCurrentPage} from '../../../redux/user-Reducer';
-import {useDispatch} from 'react-redux';
+import { getUserRepo, setCurrentPage } from '../../../redux/user-Reducer';
+import { useDispatch } from 'react-redux';
 
 type PropsType = {
     totalItemsCount: number,
@@ -11,7 +11,7 @@ type PropsType = {
     login: string
 }
 
-export const Paginator: React.FC<PropsType> = ({totalItemsCount, pageSize,
+export const Paginator: React.FC<PropsType> = ({ totalItemsCount, pageSize,
                                                    currentPage, portionSize = 4,
                                                    login}) => {
     const dispatch = useDispatch()
@@ -37,19 +37,19 @@ export const Paginator: React.FC<PropsType> = ({totalItemsCount, pageSize,
 
     return (
         <div >
-            <div className={'paginatorWrapperItems'}>
-                <div> {`${leftPortionPageNumber} - ${rightPortionPageNumber} of ${totalItemsCount} items`}</div>
-                {portionNumber > 1 && <i className={'fas fa-chevron-left paginatorIcons'}
-                                         onClick={() => setPortionNumber(portionNumber - 1)}/>}
-                {pages
+            <div className={ 'paginatorWrapperItems' }>
+                <div> { `${ leftPortionPageNumber } - ${ rightPortionPageNumber } of ${ totalItemsCount } items` }</div>
+                { portionNumber > 1 && <i className={ 'fas fa-chevron-left paginatorIcons' }
+                                         onClick={ () => setPortionNumber(portionNumber - 1) }/> }
+                { pages
                     .filter(page => page >= leftPortionPageNumber && page <= rightPortionPageNumber)
                     .map(page => {
                         return <span className={ cn('paginatorNumberOfPage', {'selectedPage': currentPage === page})}
                                      key={page}
                                      onClick={() => handlerPageChanged(page)}>{page}</span>
-                    })}
-                {portionCount > portionNumber && <i className={'fas fa-chevron-right paginatorIcons'}
-                                                    onClick={() => setPortionNumber(portionNumber + 1)}/>}
+                    }) }
+                { portionCount > portionNumber && <i className={ 'fas fa-chevron-right paginatorIcons' }
+                                                    onClick={() => setPortionNumber(portionNumber + 1) }/>}
             </div>
         </div>
     )

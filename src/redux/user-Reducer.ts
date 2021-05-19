@@ -1,7 +1,7 @@
-import {userAPI} from '../api/api'
-import {userType} from '../types/types'
-import {AppStateType} from './redux-store'
-import {ThunkAction} from 'redux-thunk'
+import { userAPI } from '../api/api'
+import { userType } from '../types/types'
+import { AppStateType } from './redux-store'
+import { ThunkAction } from 'redux-thunk'
 
 const SET_USER: string = 'Startup-Summer/user/SET_USER'
 const SET_USER_REPOSITORIES: string = 'Startup-Summer/user/SET_USER_REPOSITORIES'
@@ -26,19 +26,19 @@ const initialState = {
 const userReducer = (state = initialState, action: any): InitialStateType => {
     switch (action.type) {
         case SET_USER:
-            return {...state, user: action.user}
+            return { ...state, user: action.user }
         case SET_USER_REPOSITORIES:
-            return {...state, repositories: action.repositories}
+            return { ...state, repositories: action.repositories }
         case TOGGLE_IS_FETCHING:
-            return {...state, isFetching: action.isFetching}
+            return { ...state, isFetching: action.isFetching }
         case SET_CURRENT_PAGE:
-            return {...state, currentPage: action.currentPage}
+            return { ...state, currentPage: action.currentPage }
         case SET_TOTAL_REPOSITORIES_COUNT:
-            return {...state, totalRepositoriesCount: action.totalRepositoriesCount}
+            return { ...state, totalRepositoriesCount: action.totalRepositoriesCount }
         case SET_ERROR_USER_NAME:
-            return {...state, isErrorName: action.isErrorName}
+            return { ...state, isErrorName: action.isErrorName }
         case SET_ERROR_USER_NAME_MESSAGE:
-            return {...state, errorNameMessage: action.errorNameMessage}
+            return { ...state, errorNameMessage: action.errorNameMessage }
         default:
             return state
     }

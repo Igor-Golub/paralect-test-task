@@ -1,12 +1,12 @@
 import React from 'react'
-import {useSelector} from 'react-redux'
-import {InitialPage} from '../../InitiaiPage/InitialPage'
-import {AppStateType} from '../../../redux/redux-store';
-import {Paginator} from '../../CommonComponents/Paginator/Paginator';
-import {ProfileRepositoriesContainer} from './ProfileRepositoriesContainer';
-import {Preloader} from '../../CommonComponents/Preloader/Preloader';
-import {UserNotFoundPage} from '../../UserNotFoundPage/UserNotFoundPage';
-import {ProfileDescription} from './ProfileDescription/ProfileDescription';
+import { useSelector } from 'react-redux'
+import { InitialPage } from '../../InitiaiPage/InitialPage'
+import { AppStateType } from '../../../redux/redux-store';
+import { Paginator } from '../../CommonComponents/Paginator/Paginator';
+import { ProfileRepositoriesContainer } from './ProfileRepositoriesContainer';
+import { Preloader } from '../../CommonComponents/Preloader/Preloader';
+import { UserNotFoundPage } from '../../UserNotFoundPage/UserNotFoundPage';
+import { ProfileDescription } from './ProfileDescription/ProfileDescription';
 
 export const ProfileContainer = () => {
     const user = useSelector((state: AppStateType) => state.user.user)
@@ -21,18 +21,18 @@ export const ProfileContainer = () => {
     }
 
     return <>
-        {isErrorName
+        { isErrorName
             ? <UserNotFoundPage/>
             : isFetching
                 ? <Preloader/>
-                : <div className={'profileWrapper'}>
-                    <ProfileDescription user={user}/>
-                    <ProfileRepositoriesContainer user={user}/>
-                    <div className={'paginatorWrapper'}>
-                        <Paginator totalItemsCount={totalRepositoriesCount} pageSize={repositoriesOnPage}
-                                   currentPage={currentPage} login={user.login}/>
+                : <div className={ 'profileWrapper' }>
+                    <ProfileDescription user={ user }/>
+                    <ProfileRepositoriesContainer user={ user }/>
+                    <div className={ 'paginatorWrapper' }>
+                        <Paginator totalItemsCount={ totalRepositoriesCount } pageSize={ repositoriesOnPage }
+                                   currentPage={ currentPage } login={ user.login }/>
                     </div>
-                </div>}
+                </div> }
 
     </>
 }

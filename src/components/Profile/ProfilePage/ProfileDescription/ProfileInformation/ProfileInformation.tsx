@@ -8,27 +8,27 @@ type PropsType = {
     html_url: string
 }
 
-export const ProfileInformation:React.FC<PropsType> = ({name, login, following, followers, html_url}) => {
+export const ProfileInformation:React.FC<PropsType> = ({ name, login, following, followers, html_url }) => {
     return (
-        <div className={'informationWrapper'}>
-            <div className={'profileName'}>
-                {name}
+        <div className={ 'informationWrapper' }>
+            <div className={ 'profileName' }>
+                { name}
             </div>
-            <a href={html_url} target={'blank'} className={'profileLogin'}>
-                {login}
+            <a href={ html_url} target={'blank' } className={'profileLogin' }>
+                { login }
             </a>
-            <div className={'followerWrapper'}>
+            <div className={ 'followerWrapper' }>
                 <>
-                    <i className={'fas fa-user-friends iconProfile'}/>
+                    <i className={ 'fas fa-user-friends iconProfile' }/>
                 </>
-                <div className={'profileFollowers'}>
-                    {(followers / 1000).toFixed(1)} followers
+                <div className={ 'profileFollowers' }>
+                    { (followers / 1000).toFixed(1) } followers
                 </div>
                 <>
-                    <i className={'fas fa-user iconProfile'}/>
+                    <i className={ 'fas fa-user iconProfile' }/>
                 </>
-                <div className={'profileFollowing'}>
-                    {following} following
+                <div className={ 'profileFollowing' }>
+                    { following } following
                 </div>
             </div>
         </div>
